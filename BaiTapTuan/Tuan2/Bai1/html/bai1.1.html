@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bai 1</title>
+    <style>
+        body {
+
+            margin: 10px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #a52a2a;
+            font-style: italic;
+            text-shadow: 8px 15px 4px pink;
+        }
+
+        /* Khung bao quanh menu */
+        .menu-box {
+            border: 2px solid #a52a2a;
+            padding: 10px;
+        }
+
+        /* Link trên cùng */
+        .nav {
+            border-top: 1px solid #666;
+            border-bottom: 1px solid #666;
+            padding: 5px;
+        }
+
+        .nav a {
+            text-decoration: none;
+            color: #4b0082;
+            margin-right: 10px;
+        }
+
+        h2 {
+            color: #a52a2a;
+            font-size: 24px;
+        }
+
+        /* Nền vàng nhạt */
+        .section>h2 {
+            background-color: #f9f9e1;
+            padding: 10px;
+            margin-bottom: 10px;
+        }
+
+        #highlight b {
+            color: goldenrod;
+        }
+
+        li {
+            margin-bottom: 5px;
+        }
+
+        a.back {
+            display: block;
+            margin-top: 10px;
+            color: red;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="menu-box">
+        <div id="top"></div>
+
+        <h1>EXAMPLE CAFE MENU</h1>
+        <div class="nav">
+            <a href="#starters">Starter</a>
+            <a href="#maincourses">Main Courses</a>
+            <a href="#desserts">Desserts</a>
+        </div>
+
+        <div class="section">
+            <h2 id="starters">Starter</h2>
+            <ul>
+                <li>Chesnut and Mushroom Goujons (v)</li>
+                <li>Goat Cheese(v)</li>
+                <li id="highlight"><b>HONEY SOY CHICKEN KEBABS</b>(v)</li>
+                <li>Seafood Salad(v)</li>
+            </ul>
+            <a href="#top" class="back">Back to Top</a>
+        </div>
+
+
+
+        <div class="section">
+            <h2 id="desserts">Desserts</h2>
+            <ul>
+                <li>Lemon Sorbet (v)</li>
+                <li>Chocolate Mud Pie(v)</li>
+                <li>Pecan Pie(v)</li>
+                <li>Selection of fine Cheeses from Around the World(v)</li>
+            </ul>
+            <a href="#top" class="back">Back to Top</a>
+        </div>
+    </div>
+
+
+</body>
+
+</html>
