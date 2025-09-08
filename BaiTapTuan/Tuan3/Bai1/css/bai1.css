@@ -1,103 +1,79 @@
+body {
+    padding: 0;
+    margin: 0;
+}
+
 #container {
-    background-image: linear-gradient(rgb(149, 199, 255), rgb(84, 164, 230));
-    width: 80%;
-    height: auto;
-    margin: auto;
-}
-
-header {
-    height: 50px;
-    border-bottom: 5px dotted white;
-}
-
-#menu {
-    width: 70%;
-    height: 70px;
-    float: left;
-}
-
-#menu ul li {
-    list-style: none;
-    text-decoration: none;
-    display: inline;
-    margin-right: 30px;
+    display: grid;
+    grid-template-areas: "headerleft headerright" "contentleft contentright" "footer footer";
+    background-color: rgb(117, 203, 220);
+    grid-column: 1fr 1fr;
     color: white;
-
-    font-weight: bold;
-    font-size: large;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
-#logo {
-    float: left;
+#headerleft {
+    grid-area: headerleft;
+    justify-content: center;
+    border-bottom: 2px solid white;
+}
+
+#headerright {
+    grid-area: headerright;
     display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    width: 30%;
-    height: 50px;
+    justify-content: right;
+    padding-right: 10px;
+    border-bottom: 2px solid white;
 }
 
-#logo h1 {
-    margin-right: 20px;
-    color: white;
-    text-shadow: 2px 2px 2px blue;
+#contentleft {
+    grid-area: contentleft;
+    height: 492px;
 }
 
-section {
-    height: 450px;
-    width: 50%;
-    float: left;
-    color: white;
-}
-
-aside {
-    float: left;
-    width: 50%;
-}
-
-table {
-    /* padding: auto; */
-    padding-left: 50px;
-}
-
-input,
-textarea {
-    width: 100%;
-    border-color: blue;
-    border-radius: 8px;
-}
-
-button {
-    border-color: blue;
-    border-style: dashed;
-    border-radius: 8px;
-}
-
-aside img {
-    width: 80%;
-    display: block;
-    margin: auto;
-}
-
-aside h1 {
-    margin-left: 100px;
-    color: blue;
-    text-shadow: 2px 2px blue;
-    margin-bottom: 0;
-}
-
-aside h3 {
-    margin-top: 0;
-    margin-left: 120px;
-    color: blue;
-}
-
-footer {
-    border-top: 5px dotted white;
-    height: 80px;
-    clear: both;
+#contentright {
+    grid-area: contentright;
     display: flex;
     justify-content: center;
-    text-align: center;
-    color: white;
-    font-weight: bold;
+    align-items: center;
+}
+
+#footer {
+    grid-area: footer;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    border-top: 2px solid white;
+    padding: 5px;
+    font-size: 15px;
+    line-height: 1.2;
+}
+
+ul {
+    display: flex;
+    justify-content: space-around;
+}
+
+li {
+    list-style-type: none;
+}
+
+#tieude {
+    font-style: italic;
+    font-size: 20px;
+    text-shadow: 2px 4px blue;
+}
+
+#box1 {
+    margin-left: 10px;
+}
+
+#form {
+    margin-left: 20px;
+}
+
+img {
+    height: 350px;
+    width: 350px;
 }
