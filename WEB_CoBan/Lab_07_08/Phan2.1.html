@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Phần 2.1 - Hiển thị ảnh + mô tả</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .image-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            gap: 20px;
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        .image-container img {
+            width: 400px;
+            height: auto;
+            border-radius: 8px;
+            object-fit: cover;
+            box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .description {
+            flex: 1;
+        }
+
+        .description h2 {
+            color: #2c3e50;
+            margin-bottom: 10px;
+        }
+
+        .description p {
+            font-size: 16px;
+            line-height: 1.6;
+            color: #333;
+            text-align: justify;
+        }
+
+        /* Responsive cho tablet và mobile */
+        @media (max-width: 768px) {
+            .image-container {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .image-container img {
+                width: 100%;
+                max-width: 500px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <h1 style="text-align:center; color:#00796b;">Phần 2.1 - Hiển thị ảnh + mô tả</h1>
+
+    <div class="image-container">
+        <img src="/img/canhdong.png" alt="Cánh đồng quê Việt Nam">
+
+        <div class="description">
+            <h2>Khung cảnh đồng quê Việt Nam</h2>
+            <p>
+                Bức ảnh ghi lại một khung cảnh đồng quê Việt Nam yên bình. Nổi bật là cánh đồng lúa xanh xen lẫn vàng
+                óng
+                trải dài bát ngát. Giữa đồng, con đường mòn nhỏ uốn lượn dẫn ra xa, bên cạnh là cây cổ thụ lớn đứng đơn
+                độc
+                tạo điểm nhấn cho không gian. Ở góc phải, một người nông dân đội nón ngồi trên lưng trâu, bên cạnh là
+                chú
+                nghé con quấn quýt với mẹ. Xa xa, làng quê ẩn hiện trong làn sương cùng ánh sáng vàng nhẹ lúc hoàng hôn,
+                toát lên vẻ thanh bình, giản dị, gắn liền với cuộc sống nông thôn Việt Nam.
+            </p>
+        </div>
+    </div>
+</body>
+
+</html>

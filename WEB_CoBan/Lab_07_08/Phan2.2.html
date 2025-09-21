@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Thư viện ảnh</title>
+    <style>
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px;
+            max-width: 900px;
+            margin: 40px auto;
+        }
+
+        .gallery img {
+            width: 100%;
+            border-radius: 8px;
+            transition: transform .3s;
+        }
+
+        .gallery img:hover {
+            transform: scale(1.05);
+        }
+
+        @media(max-width:900px) {
+            .gallery {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media(max-width:600px) {
+            .gallery {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <h1 style="text-align:center; color:#00796b;">Thư Viện Ảnh</h1>
+    <div class="gallery">
+        <img src="/img/canhdong7.jpg" alt="">
+        <img src="/img/canhdong2.jpg" alt="">
+        <img src="/img/canhdong7.jpg" alt="">
+        <img src="/img/canhdong4.jpg" alt="">
+        <img src="/img/canhdong5.webp" alt="">
+        <img src="/img/canhdong6.jpg" alt="">
+    </div>
+</body>
+
+</html>
