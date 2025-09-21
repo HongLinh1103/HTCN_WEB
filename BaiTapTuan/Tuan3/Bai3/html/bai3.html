@@ -4,85 +4,308 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bai3</title>
-    <link rel="stylesheet" href="../css/bai3.css">
+    <title>Autumn Travel Company</title>
+    <style>
+        body {
+            padding: 0;
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        #container {
+            display: grid;
+            grid-template-areas:
+                "header header"
+                "menu menu"
+                "nav nav"
+                "left right"
+                "footer footer";
+            grid-template-columns: 60% 40%;
+            grid-template-rows: 70px 50px auto 1fr 50px;
+            height: 100vh;
+        }
+
+        /* Header */
+        #header {
+            grid-area: header;
+            background-color: rgb(142, 73, 35);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #header h1 {
+            color: rgb(153, 159, 44);
+            text-shadow: -2px -2px 4px white;
+            margin: 0;
+            font-size: 30px;
+        }
+
+        /* Menu */
+        #menu {
+            grid-area: menu;
+            background-color: white;
+            display: flex;
+            align-items: center;
+
+            height: 50px;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+            /* đổ bóng nhẹ */
+        }
+
+        #menu ul {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            list-style: none;
+
+        }
+
+        #menu ul li {
+            margin: 0 50px;
+
+        }
+
+        #menu ul li a {
+            text-decoration: none;
+            color: orange;
+            font-weight: bold;
+            font-size: 14px;
+            /* thu nhỏ chữ phù hợp với menu thấp */
+            transition: color 0.3s;
+        }
+
+        #menu ul li a:hover {
+            color: darkorange;
+            /* hiệu ứng khi hover */
+        }
+
+        /* Nav */
+        #nav {
+            grid-area: nav;
+            background-image: url(../img/line.png);
+            background-repeat: repeat-x;
+            height: 90px;
+            background-size: 120px;
+        }
+
+        /* Left & Right */
+        #left {
+            grid-area: left;
+            border-right: 1px solid black;
+            padding: 10px;
+        }
+
+        h2 {
+            color: rgb(153, 159, 44);
+        }
+
+        #left p {
+            color: rgb(153, 159, 44);
+            margin-left: 20px;
+        }
+
+        /* Form minimal với gạch dưới */
+        #left form {
+            margin-top: 10px;
+            margin-left: 20px;
+        }
+
+        #left .form-group {
+            margin-bottom: 20px;
+        }
+
+        #left input[type="text"],
+        #left input[type="email"],
+        #left input[type="password"] {
+            width: 80%;
+            padding: 8px 0;
+            border: none;
+            border-bottom: 1px solid #aaa;
+            font-size: 14px;
+            background-color: transparent;
+            outline: none;
+            transition: border-color 0.3s;
+        }
+
+        #left input:focus {
+            border-bottom: 2px solid orange;
+        }
+
+        #left button {
+            margin-top: 10px;
+            width: 30%;
+            padding: 10px;
+            background-color: #a3a300;
+            /* màu giống hình */
+            border: none;
+            border-radius: 3px;
+            font-weight: bold;
+            color: white;
+            font-size: 14px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        #left button:hover {
+            background-color: #808000;
+        }
+
+
+        #right {
+            grid-area: right;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        /* Card Links */
+        #right #link {
+            background-color: #ffeedd;
+            /* nền nhạt */
+            padding: 15px;
+            border-radius: 8px;
+        }
+
+        #right #link h3 {
+
+            /* giống hình */
+            font-weight: bold;
+
+            margin-top: 0;
+            margin-bottom: 10px;
+        }
+
+        #right #link ul {
+            list-style: disc;
+            padding-left: 20px;
+            /* tạo lề cho dấu chấm */
+            margin: 0;
+        }
+
+        #right #link ul li {
+            margin-bottom: 6px;
+        }
+
+        #right #link ul li a {
+            text-decoration: none;
+            color: #c77c45;
+
+            font-size: 14px;
+        }
+
+        /* Card More Info */
+        #right #info {
+            padding: 15px;
+        }
+
+        #right #info h3 {
+
+            font-weight: bold;
+
+            margin-top: 0;
+            margin-bottom: 10px;
+        }
+
+        #right #info p {
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            font-size: 14px;
+            line-height: 1.5;
+            color: #555;
+        }
+
+        #right #info img {
+            width: 60px;
+            height: 60px;
+            object-fit: cover;
+            border-radius: 4px;
+        }
+
+
+        /* Footer */
+        #footer {
+            grid-area: footer;
+
+            clear: both;
+            background-color: rgb(142, 73, 35);
+            padding-left: 10px;
+            color: white;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+    </style>
 </head>
 
 <body>
     <div id="container">
-        <header>
+        <div id="header">
             <h1>AUTUMN TRAVEL COMPANY</h1>
-        </header>
-        <nav>
-            <ul>
-                <li><a href="">Home</a></li>
-                <li><a href="">About</a></li>
-                <li><a href="">Products</a></li>
-                <li><a href="">Services</a></li>
-                <li><a href="">Order</a></li>
-            </ul>
-
-        </nav>
-        <div id="body">
-            <div id="bg">
-            </div>
-            <section>
-                <h2>Sign up for membership benefits</h2>
-                <p>Our philisophical are transparency, respect, formality and responsibility. Our stimulus is your
-                    enthusiasm. Our motto is your satisfation.</p>
-
-                <form action="">
-                    <table width="80%">
-                        <tr>
-                            <td><input type="text" name="" class="textForm" placeholder="UserName"> </td>
-                        </tr>
-                        <tr>
-                            <td><input type="text" name="" class="textForm" placeholder="Email"> </td>
-                        </tr>
-                        <tr>
-                            <td><input type="text" name="" class="textForm" placeholder="Password"> </td>
-                        </tr>
-                        <tr>
-                            <td><input type="text" name="" class="textForm" placeholder="Retype Password"> </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <button id="btn">SIGN ME UP</button>
-                            </td>
-                        </tr>
-                    </table>
-                </form>
-            </section>
-            <aside>
-                <div id="link">
-                    <h3>Links</h3>
-                    <ul>
-                        <li><a href="">Make your Own Tour</a></li>
-                        <li><a href="">Maldives Tours</a></li>
-                        <li><a href="">Nature & Adventure</a></li>
-                        <li><a href="">Europe Tours</a></li>
-                        <li><a href="">Rusia Tours</a></li>
-                    </ul>
-                </div>
-                <div id="info">
-                    <h3>More Info</h3>
-                    <p>
-                        <img src="../img/leaf.png" alt="">
-                        Our purpose is the client who gives to us the opportunites to serve and to make known the
-                        reality arround the world
-                    </p>
-                </div>
-
-
-            </aside>
         </div>
-        <footer>
+        <div id="menu">
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Products</a></li>
+                <li><a href="#">Services</a></li>
+                <li><a href="#">Order</a></li>
+            </ul>
+        </div>
+        <div id="nav">Nav</div>
+        <div id="left">
+            <h2>Sign up for membership benefits</h2>
+            <p>Our philosophical values are transparency, respect, formality and responsibility. Our stimulus is your
+                enthusiasm. Our motto is your satisfaction.</p>
+
+            <form>
+                <div class="form-group">
+                    <input type="text" placeholder="Username">
+                </div>
+                <div class="form-group">
+                    <input type="email" placeholder="E-mail">
+                </div>
+                <div class="form-group">
+                    <input type="password" placeholder="Password">
+                </div>
+                <div class="form-group">
+                    <input type="password" placeholder="Retype password">
+                </div>
+                <div class="form-group">
+                    <button type="submit">SIGN ME UP</button>
+                </div>
+            </form>
+        </div>
+
+        <div id="right">
+            <div id="link">
+                <h3>Links</h3>
+                <ul>
+                    <li><a href="">Make your Own Tour</a></li>
+                    <li><a href="">Maldives Tours</a></li>
+                    <li><a href="">Nature & Adventure</a></li>
+                    <li><a href="">Europe Tours</a></li>
+                    <li><a href="">Rusia Tours</a></li>
+                </ul>
+            </div>
+            <div id="info">
+                <h3>More Info</h3>
+                <p>
+                    <img src="../img/leaf.png" alt="">
+                    Our purpose is the client who gives to us the opportunites to serve and to make known the reality
+                    arround the world
+                </p>
+            </div>
+        </div>
+        <div id="footer">
             <p>
                 © 2017 Software Engineering Department Test Date 16 Sep 2017
             </p>
-
-
-        </footer>
+        </div>
     </div>
 </body>
 
