@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bootstrap Modal</title>
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+</head>
+
+<body>
+    <div class="container mt-5 text-center">
+        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#myModal">
+            Open Modal
+        </button>
+    </div>
+
+    <div class="modal fade" id="myModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+
+                <div class="modal-header">
+                    <h5 class="modal-title">Enter Your Name</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+
+                <div class="modal-body">
+                    <form id="nameForm">
+                        <div class="mb-3 text-start">
+                            <label for="name" class="form-label">Your Name</label>
+                            <input type="text" id="name" class="form-control" placeholder="Enter your name" autocomplete="off">
+                            <div id="errorname" class="form-text text-danger mt-1"></div>
+                        </div>
+                        <div class="mb-3 text-start">
+                            <label for="phone" class="form-label">Your Phone</label>
+                            <input type="tel" id="phone" class="form-control" placeholder="Enter your phone number" autocomplete="off">
+                            <div id="errorphone" class="form-text text-danger mt-1"></div>
+                        </div>
+                    </form>
+                </div>
+
+                <div class="modal-footer">
+                    <button type="button" id="btnWarning" class="btn btn-warning">Check Info</button>
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <script src="../js/bootstrap.min.js"></script>
+    <script>
+        const btnWarning = document.getElementById('btnWarning');
+
+        const errorname = document.getElementById('errorname');
+        const nameInput = document.getElementById('name');
+
+        const errorphone = document.getElementById('errorphone');
+        const phoneInput = document.getElementById('phone');
+
+        const namePattern = /\d/; // tên không được chứa số
+        const phonePattern = /^(03|05|07|08|09|01[2689])[0-9]{8}$/;
+
+        btnWarning.onclick = () => {
+            const name = nameInput.value.trim();
+            const phone = phoneInput.value.trim();
+            let valid = true;
+
+            if (name === '') {
+                errorname.innerText = 'Please enter your name!';
+                nameInput.classList.add('is-invalid');
+                valid = false;
+            } else if (namePattern.test(name)) {
+                errorname.innerText = 'Name cannot contain numbers!';
+                nameInput.classList.add('is-invalid');
+                valid = false;
+            } else {
+                errorname.innerText = '';
+                nameInput.classList.remove('is-invalid');
+            }
+
+            if (phone === '') {
+                errorphone.innerText = 'Please enter your phone number!';
+                phoneInput.classList.add('is-invalid');
+                valid = false;
+            } else if (!phonePattern.test(phone)) {
+                errorphone.innerText = 'Invalid phone number format!';
+                phoneInput.classList.add('is-invalid');
+                valid = false;
+            } else {
+                errorphone.innerText = '';
+                phoneInput.classList.remove('is-invalid');
+            }
+
+            if (valid) {
+                alert('Name: ' + name + '\nPhone: ' + phone);
+            }
+        };
+    </script>
+</body>
+
+</html>
